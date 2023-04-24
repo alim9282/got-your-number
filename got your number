@@ -1,0 +1,22 @@
+import math
+e = input("do you want to play a game , i will guess the number in your mind in a certain trial y/n")
+if e == 'y' :
+    f = int(input("great between 1 and which number do you want to try:"))
+    a = f
+    k = f*0.5
+    power = math.log2(f)+2 
+    power = math.ceil(power)             
+    print (" I will find your number in ", power ," trials")
+    i =1 
+    a = math.ceil(a/2)
+    while i < power:     
+        b = input("here you go my trial  " +str(i) +" number is you number " + str(a) + "   if not lower or higher typr y ,l ,h") 
+        print(i)
+        if b == ('y'):
+            print("i am so proud of my self your number is ",a," was estimated correctly")
+            break 
+        elif b ==('l'):
+            a = round(a-((0.5)**i)*k)
+        else:
+            a = round(a+((0.5)**i)*k)
+        i = i+1    
